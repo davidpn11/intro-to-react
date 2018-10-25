@@ -31,7 +31,9 @@ const images = {
   reactLogo: require("../assets/react-logo.png"),
   profile: require("../assets/profile.jpg"),
   twitterLogo: require("../assets/twitter-logo.svg"),
-  githubLogo: require("../assets/github.svg")
+  githubLogo: require("../assets/github.svg"),
+  componentBased: require("../assets/component-based.png"),
+  componentTree: require("../assets/component-tree.png")
 };
 
 const codesandboxStyle = {
@@ -127,8 +129,9 @@ export default class Presentation extends React.Component {
             O que é React?
           </Heading>
         </Slide>
+
         {/* CONCEITOS INICIAIS */}
-        <Slide transition={["zoom"]} bgColor="primary">
+        <Slide transition={["zoom"]} bgColor="tertiary">
           <Heading size={1} caps lineHeight={1}>
             Framework JS
           </Heading>
@@ -143,15 +146,74 @@ export default class Presentation extends React.Component {
             <ListItem>Atomic Design</ListItem>
           </List>
         </Slide>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} caps lineHeight={1}>
-            Dados
-          </Heading>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="black">
+          <Image width="70%" height="625px" src={images.componentBased} />
         </Slide>
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} caps lineHeight={1}>
-            Transferência de dados unidirecional (Flux)
+            Arquitetura Flux
           </Heading>
+          <List>
+            <ListItem>Transferência de dados unidirecional</ListItem>
+            <ListItem>Dados são transferidos de pais para filhos </ListItem>
+            <ListItem>Filhos não podem alterar os dados recebidos</ListItem>
+            <ListItem>
+              Filhos podem requisitar que os dados sejam alterados
+            </ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="dark">
+          <Heading size={3} textColor="white" caps lineHeight={1}>
+            Dados do componente - State and props
+          </Heading>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="tertiary">
+          <Heading size={1} textColor="white" caps lineHeight={1}>
+            State
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>State são os dados internos do componente</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Deve existir um estado inicial</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Apenas o próprio componente pode alterar seu estado
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Strings, numbers, booleans, objects, arrays</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="tertiary">
+          <Heading size={1} textColor="white" caps lineHeight={1}>
+            Props
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                Props são os dados providos pelo componente pai ou uma store
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Não podem ser alterados</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Podem requisitar alterações através de callbacks
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Também podem ser funções</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="white" textColor="black">
+          <Image src={images.componentTree} />
         </Slide>
       </Deck>
     );
