@@ -35,6 +35,7 @@ const images = {
   componentBased: require("../assets/component-based.png"),
   componentTree: require("../assets/component-tree.png")
 };
+import FirstComponent from "./components/FirstComponent";
 
 const codesandboxStyle = {
   width: "100%",
@@ -335,6 +336,70 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["spin"]} bgColor="white" textColor="black">
           <Image src={images.componentTree} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="grayBg">
+          <Heading size={3} textColor="white">
+            Mas e ai?
+          </Heading>
+          <Heading size={3} textColor="white">
+            Por onde eu começo?
+          </Heading>
+          <Appear>
+            <CodePane
+              fontSize="20px"
+              style={{ fontSize: "24px" }}
+              lang="jsx"
+              source={`
+              npm install -g create-react-app
+              create-react-app my-first-app
+            `}
+            />
+          </Appear>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="white" textColor="grayBg">
+          <Heading>Meu primeiro componente</Heading>
+        </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/code/firstReact.example")}
+          // code={code}
+          ranges={[
+            { loc: [0, 50], title: "Primeiro Componente" },
+            { loc: [0, 2], note: "Imports de react e react-dom" },
+            { loc: [3, 5], note: "Utiliza ES6 classes" },
+            { loc: [5, 8], note: "Inicializa o estado do componente" },
+            { loc: [9, 17], note: "Função para incrementar o count" },
+            { loc: [9, 17], note: "Função para incrementar o count" },
+            {
+              loc: [9, 17],
+              note: "A partir do estado anterior, incrementa o count"
+            },
+            {
+              loc: [9, 17],
+              note: "Checa se superou o limite estipulado"
+            },
+            { loc: [20, 36], title: "método render() " },
+            { loc: [21, 22], note: "Pega o state " },
+            { loc: [22, 34], note: "Retorna o template do componente" },
+            { loc: [22, 34], note: "JSX" },
+            { loc: [24, 25], note: "Pega a o titulo recebido via props" },
+            {
+              loc: [25, 29],
+              note: "Botão com onClick e disabled baseado no overLimit"
+            },
+            { loc: [29, 34], note: "Se não passou do limite exibe o botão" },
+            { loc: [39, 41], note: "usa o Render do ReactDOM" },
+            { loc: [1, 2], note: "Esse daqui!" },
+            { loc: [39, 41], note: "coloca a prop Title" },
+            { loc: [0, 36], title: "É isso!" }
+          ]}
+        />
+        <Slide transition={["spin"]} bgColor="white" textColor="grayBg">
+          <Heading>E ai fica +/i isso ai</Heading>
+          <FirstComponent title="Primeiro Component" />
         </Slide>
       </Deck>
     );

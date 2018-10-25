@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 
-class App extends Component {
+class FirstComponent extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       count: 0,
       overLimit: false
@@ -23,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <h2>{this.props.title}</h2>
-        <button onClick={() => this.upVote()} disabled={overLimit}>
+        <button onClick={() => this.toggleState()} disabled={overLimit}>
           Click me
         </button>
         {!overLimit ? (
@@ -36,4 +34,4 @@ class App extends Component {
   }
 }
 
-render(<App title="Primeiro Component" />, document.getElementById("root"));
+export default FirstComponent;

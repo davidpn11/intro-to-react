@@ -2,19 +2,19 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      count: 0,
-      overLimit: false
-    };
-  }
+  state = {
+    count: 0,
+    overLimit: false
+  };
+
 
   toggleState() {
     this.setState(prevState => ({
       count: prevState.count + 1,
-      overLimit: prevState.count + 1 > 10 ? true : false
+      overLimit: prevState.count + 1 > 10
+        ? true
+        : false
     }));
   }
 
@@ -23,7 +23,8 @@ class App extends Component {
     return (
       <div>
         <h2>{this.props.title}</h2>
-        <button onClick={() => this.upVote()} disabled={overLimit}>
+        <button onClick={() => this.upVote()}
+          disabled={overLimit}>
           Click me
         </button>
         {!overLimit ? (
@@ -36,4 +37,5 @@ class App extends Component {
   }
 }
 
-render(<App title="Primeiro Component" />, document.getElementById("root"));
+render(<App title="Primeiro Component" />,
+  document.getElementById("root"));
