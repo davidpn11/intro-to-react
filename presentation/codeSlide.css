@@ -1,0 +1,25 @@
+code {
+  color: white;
+}
+.token.keyword {
+  color: #feb2ff;
+}
+.token.string {
+  color: #7ec699;
+}
+.token.comment {
+  color: #999;
+}
+.token.punctuation {
+  color: #a5a5a5;
+}
+.token.function {
+  color: #f08d49;
+}
+.token.operator {
+  color: #67cdcc;
+}
+
+.token.number {
+  color: #f08d49;
+}
