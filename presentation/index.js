@@ -124,14 +124,135 @@ export default class Presentation extends React.Component {
             </Text>
           </Link>
         </Slide>
+        {/* REVISÃO JAVASCRIPT */}
+        <Slide transition={["spin"]} bgColor="grayBg">
+          <Heading size={1} fit caps lineHeight={1} textColor="white">
+            Revisão JS (ES5/ES6/ES7)
+          </Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="grayBg">
+          <Heading size={1} fit caps lineHeight={1} textColor="white">
+            Arrow Function
+          </Heading>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="codeBg">
+          <Layout>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/arrowFunction.example")}
+              />
+            </Fill>
+            <Text
+              style={{
+                fontSize: "60px",
+                color: "white",
+                display: "flex",
+                alignSelf: "center",
+                marginRight: "30px"
+              }}
+            >
+              =
+            </Text>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/regularFunction.example")}
+              />
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="grayBg">
+          <Text size={3} fit lineHeight={1} textColor="white">
+            Possui o this da função pai
+          </Text>
+          <CodePane
+            fontSize="20px"
+            style={{ fontSize: "24px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/arrowFunction2.example")}
+          />
+          <Text size={3} fit lineHeight={1} textColor="white">
+            Mais concisa
+          </Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={3} fit lineHeight={1} textColor="white">
+            .map
+          </Heading>
+          <List>
+            <ListItem>Itera sobre um array</ListItem>
+            <ListItem>Modifica cada item (através de uma função)</ListItem>
+            <ListItem>Retorna um novo array</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="codeBg">
+          <Layout>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/mapFunction.example")}
+              />
+            </Fill>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/mapFunction2.example")}
+              />
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary">
+          <Heading size={3} fit lineHeight={1} textColor="white">
+            Classes
+          </Heading>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="codeBg">
+          <Layout>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/class.example")}
+              />
+            </Fill>
+            <Text
+              style={{
+                fontSize: "60px",
+                color: "white",
+                display: "flex",
+                alignSelf: "center",
+                marginRight: "30px"
+              }}
+            >
+              =
+            </Text>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/class2.example")}
+              />
+            </Fill>
+          </Layout>
+        </Slide>
+        {/* CONCEITOS INICIAIS */}
         <Slide transition={["fade"]} bgColor="grayBg">
           <Heading size={1} fit caps lineHeight={1} textColor="white">
             O que é React?
           </Heading>
         </Slide>
-
-        {/* CONCEITOS INICIAIS */}
-        <Slide transition={["zoom"]} bgColor="tertiary">
+        <Slide transition={["zoom"]} bgColor="black">
           <Heading size={1} caps lineHeight={1}>
             Framework JS
           </Heading>

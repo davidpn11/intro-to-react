@@ -1,0 +1,6 @@
+const fun = () => {
+  console.log('Olá')
+}
+
+const double = (x) => x * 2
+const double = x => x * 2

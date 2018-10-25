@@ -1,18 +1,18 @@
 {
-  "name": "react-16-talk",
+  "name": "intro-to-react",
   "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "description": "Intro to React Training",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
-    "deploy": "npm run clean & yarn build && surge -p . --domain react-infinity-and-beyond.surge.sh",
+    "deploy": "npm run clean & yarn build && now && now alias",
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js",
     "start-micro": "micro"
   },
-  "author": "",
+  "author": "David Nascimento",
   "license": "MIT",
   "dependencies": {
     "micro": "latest",

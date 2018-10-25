@@ -1,0 +1,7 @@
+function fun() {
+  console.log('Olá')
+}
+
+function double(x) {
+  return x * 2
+}

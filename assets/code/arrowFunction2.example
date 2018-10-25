@@ -1,0 +1,15 @@
+function Fun() {
+  this.count = 10
+
+  function fun2() {
+    console.log(this.count); //undefined
+  }
+  fun2();
+
+  const arrow = () => {
+    console.log(this.count) // 10
+  };
+  arrow();
+}
+
+const x = new Fun();
