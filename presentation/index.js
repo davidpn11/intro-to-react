@@ -33,7 +33,8 @@ const images = {
   twitterLogo: require("../assets/twitter-logo.svg"),
   githubLogo: require("../assets/github.svg"),
   componentBased: require("../assets/component-based.png"),
-  componentTree: require("../assets/component-tree.png")
+  componentTree: require("../assets/component-tree.png"),
+  lifeCycle: require("../assets/lifecycle.png")
 };
 import FirstComponent from "./components/FirstComponent";
 
@@ -397,9 +398,57 @@ export default class Presentation extends React.Component {
             { loc: [0, 36], title: "É isso!" }
           ]}
         />
-        <Slide transition={["spin"]} bgColor="white" textColor="grayBg">
-          <Heading>E ai fica +/i isso ai</Heading>
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <Heading>E ai fica +/- isso ai</Heading>
           <FirstComponent title="Primeiro Component" />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="white">
+          <Heading>E inputs de texto?</Heading>
+        </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/code/onChange.example")}
+          // code={code}
+          ranges={[
+            { loc: [0, 50], title: "Evento de onChange" },
+            { loc: [4, 7], note: "Seta o value" },
+            { loc: [9, 13], note: "Função para mudar o value" },
+            { loc: [9, 13], note: "É uma arrow function" },
+            { loc: [9, 13], note: "Veja que a função setState está diferente" },
+            { loc: [9, 13], note: "Não depende do state anterior" },
+            { loc: [17, 23], note: "Renderiza o componente" },
+            { loc: [19, 21], note: "input com onChange" },
+            { loc: [9, 13], note: "Essa aqui!" }
+          ]}
+        />
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <Heading>Conceitos importantes</Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                Toda vez que o estado da componente atualiza, o componente é
+                renderizado
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Toda vez que as props atualizam, o componente é atualizado
+                (indiretamente), mas pode ser evitado
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Não use setState no render (loop infinito)</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Guarde isso para os ciclos de vida</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="white">
+          <Image src={images.lifeCycle} />
         </Slide>
       </Deck>
     );

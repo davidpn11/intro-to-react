@@ -17,7 +17,8 @@ class Input extends Component {
     return (
       <div>
         <h2>Input</h2>
-        <input type="text" value={value} onChange={this.changeValueArrow}/>
+        <input type="text" value={value}
+            onChange={this.changeValueArrow}/>
       </div>
     );
   }
