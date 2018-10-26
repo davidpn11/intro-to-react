@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import { ListItem } from "spectacle";
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,11 @@ class App extends Component {
         ) : (
           <span>Botão foi clicado d+</span>
         )}
+        <ul>
+          {items.map(item => (
+            <ListItem key={item.id} name={item.name} age={item.age} />
+          ))}
+        </ul>
       </div>
     );
   }

@@ -450,6 +450,86 @@ export default class Presentation extends React.Component {
         <Slide transition={["zoom"]} bgColor="white">
           <Image src={images.lifeCycle} />
         </Slide>
+        <CodeSlide
+          theme={theme}
+          bgColor="codeSlideBg"
+          transition={[]}
+          lang="js"
+          code={require("raw-loader!../assets/code/componentDidMount.example")}
+          // code={code}
+          ranges={[
+            { loc: [0, 50], title: "Exemplo de Lifecycle" },
+            { loc: [6, 9], note: "Seta todos como uma lista vazia" },
+            { loc: [17, 26], note: "Renderiza com uma lista vazia" },
+            { loc: [12, 16], note: "Entra no lifecycle" },
+            { loc: [12, 15], note: "Faz a requisição e seta com o estado" },
+            {
+              loc: [17, 26],
+              note: "Rerenderiza o componente, com a lista preenchida"
+            }
+          ]}
+        />
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <Heading>Outros ciclos de vida</Heading>
+          <List>
+            <ListItem>
+              <b>shouldComponentUpdate:</b> O componente recebeu novas props.
+              Irá checar se graças a elas, ele precisa atualizar, ou não.
+            </ListItem>
+            <ListItem>
+              <b>componentDidUpdate:</b>
+              Seu componente recebeu novas props e renderizou. Ex: mudanças no
+              DOM, animações, scroll, etc
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <List>
+            <ListItem>
+              <b>componentWillUnmount:</b>
+              Seu componente foi destruído. Ex: limpar listeners
+            </ListItem>
+            <ListItem>
+              <b>getDerivedStateFromProps:</b>
+              Balancear o estado atual com props recebidas. Ajuda a verificar se
+              irá renderizar ou não
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <Heading size={3}>Componentes funcionais (Dumb Components)</Heading>
+          <List>
+            <Appear>
+              <ListItem>Não possui estado próprio</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Não possui ciclos de vida</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="codeBg" textColor="grayBg">
+          <Layout>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/dumbComponent.example")}
+              />
+            </Fill>
+            <Fill>
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/dumbComponentUsage.example")}
+              />
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="tertiary" textColor="white">
+          <Heading textColor="white">LIVE CODING</Heading>
+        </Slide>
       </Deck>
     );
   }

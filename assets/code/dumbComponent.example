@@ -1,0 +1,8 @@
+function ListItem(props) {
+  return (
+    <li>
+      <span>props.name</span>
+      <span>props.age</span>
+    </li>
+  );
+}
