@@ -34,7 +34,8 @@ const images = {
   githubLogo: require("../assets/github.svg"),
   componentBased: require("../assets/component-based.png"),
   componentTree: require("../assets/component-tree.png"),
-  lifeCycle: require("../assets/lifecycle.png")
+  lifeCycle: require("../assets/lifecycle.png"),
+  thanks: require("../assets/thanks.gif")
 };
 import FirstComponent from "./components/FirstComponent";
 
@@ -63,7 +64,7 @@ const theme = createTheme(
     secondary: "Helvetica"
   }
 );
-const code = require("../assets/code/code");
+// const code = require("../assets/code/code");
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -529,6 +530,56 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["zoom"]} bgColor="tertiary" textColor="white">
           <Heading textColor="white">LIVE CODING</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="grayBg" textColor="white">
+          <Heading>Recaptulando...</Heading>
+          <List>
+            <Appear>
+              <ListItem>
+                Componente são a menor unidade de medida da applicação
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Comunicação de dados Realizados via props e estados
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Smart and Dumb Components</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>JSX é lindão ❤</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="tertiary" textColor="white">
+          <Heading textColor="white">O que falta?</Heading>
+          <List>
+            <ListItem>Stores (Redux e MobX)</ListItem>
+            <ListItem>Context API</ListItem>
+            <ListItem>Padrões de design</ListItem>
+            <ListItem>E muito mais</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="white" textColor="white">
+          <Heading>Obrigado =)</Heading>
+          <Image src={images.thanks} />
+        </Slide>
+        <Slide transition={["spin"]} bgColor="primary" textColor="black">
+          <Heading size={4} textColor="tertiary">
+            Palestra feita em React ❤ -
+            <Link href="https://formidable.com/open-source/spectacle/docs/getting-started/">
+              Spectacle
+            </Link>
+          </Heading>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "20px" }}>
+            <Link href="https://github.com/jamiebuilds/spectacle-code-slide">
+              Spectacle Code Slide
+            </Link>
+          </Text>
+          <Text textColor="dark" textSize={30} style={{ marginTop: "30px" }}>
+            https://intro-to-react.now.sh/
+          </Text>
         </Slide>
       </Deck>
     );
