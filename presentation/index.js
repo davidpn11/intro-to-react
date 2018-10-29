@@ -27,6 +27,7 @@ import profile from "../assets/profile.jpg";
 // Require CSS
 require("normalize.css");
 import "./codeSlide.css";
+import "./animation.css";
 const images = {
   reactLogo: require("../assets/react-logo.png"),
   profile: require("../assets/profile.jpg"),
@@ -75,7 +76,7 @@ export default class Presentation extends React.Component {
       >
         {/* PRESENTATION SLIDE */}
         <Slide bgColor="dark">
-          <Image width="20%" src={images.reactLogo} />
+          <img width="20%" src={images.reactLogo} className="spinner" />
           <Heading
             size={1}
             fit
@@ -567,7 +568,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["spin"]} bgColor="primary" textColor="black">
           <Heading size={4} textColor="tertiary">
-            Palestra feita em React ❤ -
+            Palestra feita em React ❤️
             <Link href="https://formidable.com/open-source/spectacle/docs/getting-started/">
               Spectacle
             </Link>
