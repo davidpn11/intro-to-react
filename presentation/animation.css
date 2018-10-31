@@ -1,5 +1,5 @@
 .spinner {
-  animation: loader-spin infinite 40s linear;
+  animation: loader-spin infinite 2s linear;
 }
 
 @keyframes loader-spin {

@@ -1,0 +1,10 @@
+//com callback
+this.setState({
+    isLoading: true
+}, () =>
+    getFromAPI()
+    .then(() =>
+        this.setState({
+            isLoading: false
+        }))
+)

@@ -1,0 +1,10 @@
+//sem prevState
+this.setState({
+    count: 10
+})
+
+//com prevState
+this.setState(prevState => ({
+    count: prevState.count + 1,
+}));
+

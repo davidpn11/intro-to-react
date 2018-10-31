@@ -146,32 +146,36 @@ export default class Presentation extends React.Component {
                 fontSize="20px"
                 style={{ fontSize: "24px" }}
                 lang="jsx"
-                source={require("raw-loader!../assets/code/arrowFunction.example")}
-              />
-            </Fill>
-            <Text
-              style={{
-                fontSize: "60px",
-                color: "white",
-                display: "flex",
-                alignSelf: "center",
-                marginRight: "30px"
-              }}
-            >
-              =
-            </Text>
-            <Fill>
-              <CodePane
-                fontSize="20px"
-                style={{ fontSize: "24px" }}
-                lang="jsx"
                 source={require("raw-loader!../assets/code/regularFunction.example")}
               />
             </Fill>
+            <Appear>
+              <Text
+                style={{
+                  fontSize: "60px",
+                  color: "white",
+                  display: "flex",
+                  alignSelf: "center",
+                  marginRight: "30px"
+                }}
+              >
+                =
+              </Text>
+            </Appear>
+            <Appear>
+              <Fill>
+                <CodePane
+                  fontSize="20px"
+                  style={{ fontSize: "24px" }}
+                  lang="jsx"
+                  source={require("raw-loader!../assets/code/arrowFunction.example")}
+                />
+              </Fill>
+            </Appear>
           </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="grayBg">
-          <Text size={3} fit lineHeight={1} textColor="white">
+          <Text size={4} fit lineHeight={1} textColor="white">
             Possui o this da função pai
           </Text>
           <CodePane
@@ -180,13 +184,10 @@ export default class Presentation extends React.Component {
             lang="jsx"
             source={require("raw-loader!../assets/code/arrowFunction2.example")}
           />
-          <Text size={3} fit lineHeight={1} textColor="white">
-            Mais concisa
-          </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={3} fit lineHeight={1} textColor="white">
-            .map
+          <Heading size={4} fit lineHeight={1} textColor="white">
+            .map()
           </Heading>
           <List>
             <ListItem>Itera sobre um array</ListItem>
@@ -205,12 +206,14 @@ export default class Presentation extends React.Component {
               />
             </Fill>
             <Fill>
-              <CodePane
-                fontSize="20px"
-                style={{ fontSize: "24px" }}
-                lang="jsx"
-                source={require("raw-loader!../assets/code/mapFunction2.example")}
-              />
+              <Appear>
+                <CodePane
+                  fontSize="20px"
+                  style={{ fontSize: "24px" }}
+                  lang="jsx"
+                  source={require("raw-loader!../assets/code/mapFunction2.example")}
+                />
+              </Appear>
             </Fill>
           </Layout>
         </Slide>
@@ -220,35 +223,20 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide transition={["zoom"]} bgColor="codeBg">
-          <Layout>
-            <Fill>
-              <CodePane
-                fontSize="20px"
-                style={{ fontSize: "24px" }}
-                lang="jsx"
-                source={require("raw-loader!../assets/code/class.example")}
-              />
-            </Fill>
-            <Text
-              style={{
-                fontSize: "60px",
-                color: "white",
-                display: "flex",
-                alignSelf: "center",
-                marginRight: "30px"
-              }}
-            >
-              =
-            </Text>
-            <Fill>
-              <CodePane
-                fontSize="20px"
-                style={{ fontSize: "24px" }}
-                lang="jsx"
-                source={require("raw-loader!../assets/code/class2.example")}
-              />
-            </Fill>
-          </Layout>
+          <CodePane
+            fontSize="20px"
+            style={{ fontSize: "24px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/class2.example")}
+          />
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="codeBg">
+          <CodePane
+            fontSize="20px"
+            style={{ fontSize: "24px" }}
+            lang="jsx"
+            source={require("raw-loader!../assets/code/class.example")}
+          />
         </Slide>
         {/* CONCEITOS INICIAIS */}
         <Slide transition={["fade"]} bgColor="grayBg">
@@ -340,6 +328,9 @@ export default class Presentation extends React.Component {
         <Slide transition={["spin"]} bgColor="white" textColor="black">
           <Image src={images.componentTree} />
         </Slide>
+        <Slide transition={["spin"]} bgColor="tertiary" textColor="black">
+          <Image width="70%" height="625px" src={images.componentBased} />
+        </Slide>
         <Slide transition={["spin"]} bgColor="grayBg">
           <Heading size={3} textColor="white">
             Mas e ai?
@@ -373,36 +364,64 @@ export default class Presentation extends React.Component {
             { loc: [0, 50], title: "Primeiro Componente" },
             { loc: [0, 2], note: "Imports de react e react-dom" },
             { loc: [3, 5], note: "Utiliza ES6 classes" },
-            { loc: [5, 8], note: "Inicializa o estado do componente" },
-            { loc: [9, 17], note: "Função para incrementar o count" },
-            { loc: [9, 17], note: "Função para incrementar o count" },
+            { loc: [5, 9], note: "Inicializa o estado do componente" },
+            { loc: [11, 17], note: "Função para incrementar o count" },
             {
-              loc: [9, 17],
+              loc: [12, 16],
+              note: "Chama o setState"
+            },
+            {
+              loc: [12, 16],
               note: "A partir do estado anterior, incrementa o count"
             },
             {
-              loc: [9, 17],
+              loc: [12, 16],
               note: "Checa se superou o limite estipulado"
             },
-            { loc: [20, 36], title: "método render() " },
-            { loc: [21, 22], note: "Pega o state " },
-            { loc: [22, 34], note: "Retorna o template do componente" },
-            { loc: [22, 34], note: "JSX" },
-            { loc: [24, 25], note: "Pega a o titulo recebido via props" },
+            { loc: [18, 36], title: "método render() " },
+            { loc: [19, 20], note: "Pega o state " },
+            { loc: [20, 34], note: "Retorna o template do componente" },
+            { loc: [21, 34], note: "JSX" },
+            { loc: [22, 23], note: "Pega a o titulo recebido via props" },
             {
-              loc: [25, 29],
+              loc: [23, 27],
               note: "Botão com onClick e disabled baseado no overLimit"
             },
-            { loc: [29, 34], note: "Se não passou do limite exibe o botão" },
-            { loc: [39, 41], note: "usa o Render do ReactDOM" },
+            { loc: [27, 32], note: "Se não passou do limite exibe o botão" },
+            { loc: [37, 39], note: "usa o Render do ReactDOM" },
             { loc: [1, 2], note: "Esse daqui!" },
-            { loc: [39, 41], note: "coloca a prop Title" },
+            { loc: [37, 38], note: "coloca a prop Title" },
             { loc: [0, 36], title: "É isso!" }
           ]}
         />
         <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
           <Heading>E ai fica +/- isso ai</Heading>
           <FirstComponent title="Primeiro Component" />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="grayBg" textColor="grayBg">
+          <Heading>E esse setState? Parece importante</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="codeBg" textColor="grayBg">
+          <Layout>
+            <Fill>
+              {" "}
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/setState1.example")}
+              />
+            </Fill>
+            <Fill>
+              {" "}
+              <CodePane
+                fontSize="20px"
+                style={{ fontSize: "24px" }}
+                lang="jsx"
+                source={require("raw-loader!../assets/code/setState2.example")}
+              />
+            </Fill>
+          </Layout>
         </Slide>
         <Slide transition={["spin"]} bgColor="white">
           <Heading>E inputs de texto?</Heading>
@@ -428,24 +447,39 @@ export default class Presentation extends React.Component {
         />
         <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
           <Heading>Conceitos importantes</Heading>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="white" textColor="grayBg">
           <List>
+            <ListItem>
+              Toda vez que o state da componente atualiza, o componente é
+              renderizado
+            </ListItem>
+            <Appear>
+              <ListItem>Toda a sub árvore renderiza</ListItem>
+            </Appear>
             <Appear>
               <ListItem>
-                Toda vez que o estado da componente atualiza, o componente é
-                renderizado
+                React faz isso ser performático internamente (diffing)
               </ListItem>
             </Appear>
             <Appear>
               <ListItem>
                 Toda vez que as props atualizam, o componente é atualizado
-                (indiretamente), mas pode ser evitado
               </ListItem>
             </Appear>
             <Appear>
-              <ListItem>Não use setState no render (loop infinito)</ListItem>
+              <ListItem>Mas pode ser evitado</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
+          <List>
+            <ListItem>Não use setState no render (loop infinito)</ListItem>
+            <Appear>
+              <ListItem>Não faça operações pesadas no render()</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Guarde isso para os ciclos de vida</ListItem>
+              <ListItem>Guarde isso para callbacks e ciclos de vida</ListItem>
             </Appear>
           </List>
         </Slide>
@@ -473,6 +507,8 @@ export default class Presentation extends React.Component {
         />
         <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
           <Heading>Outros ciclos de vida</Heading>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
           <List>
             <ListItem>
               <b>shouldComponentUpdate:</b> O componente recebeu novas props.
@@ -493,10 +529,13 @@ export default class Presentation extends React.Component {
             </ListItem>
             <ListItem>
               <b>getDerivedStateFromProps:</b>
-              Balancear o estado atual com props recebidas. Ajuda a verificar se
-              irá renderizar ou não
+              Setar o estado atual de acordo com as props recebidas. Ajuda a
+              verificar se irá renderizar ou não
             </ListItem>
           </List>
+        </Slide>
+        <Slide transition={["zoom"]} bgColor="white">
+          <Image src={images.lifeCycle} />
         </Slide>
         <Slide transition={["fade"]} bgColor="white" textColor="grayBg">
           <Heading size={3}>Componentes funcionais (Dumb Components)</Heading>

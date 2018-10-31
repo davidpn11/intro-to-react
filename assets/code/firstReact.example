@@ -13,8 +13,6 @@ class App extends Component {
     this.setState(prevState => ({
       count: prevState.count + 1,
       overLimit: prevState.count + 1 > 10
-        ? true
-        : false
     }));
   }
 
