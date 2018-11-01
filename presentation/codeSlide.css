@@ -23,3 +23,11 @@ code {
 .token.number {
   color: #f08d49;
 }
+
+.prism-code .language-prism .css-efk3ot {
+  background: white !important;
+}
+
+.prism-code .language-prism .css-efk3ot .token.keyword {
+  color: firebrick;
+}
