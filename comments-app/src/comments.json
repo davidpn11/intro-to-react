@@ -1,0 +1,60 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "user": {
+        "name": "Bill Gates",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/sU9a-man1.svg"
+      },
+      "text": "What's the object-oriented way to become wealthy? Inheritance"
+    },
+    {
+      "id": 2,
+      "user": {
+        "name": "Mary Jane",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/t-S7-girl1.svg"
+      },
+      "text": " A blind man walks into a bar. And a table. And a chair."
+    },
+    {
+      "id": 3,
+      "user": {
+        "name": "John Lennon",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/SmRP-man4.svg"
+      },
+      "text": "What kind of shoes do ninjas wear? Sneakers."
+    },
+    {
+      "id": 4,
+      "user": {
+        "name": "Stan Lee",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/-aUd-man3.svg"
+      },
+      "text": "How do you tell an introverted computer scientist from an extroverted computer scientist? n extroverted computer scientist looks at your shoes when he talks to you"
+    },
+    {
+      "id": 5,
+      "user": {
+        "name": "Amy Adams",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/qOMr-girl2.svg"
+      },
+      "text": "How many programmers does it take to change a light bulb? None, that's a hardware problem."
+    },
+    {
+      "id": 6,
+      "user": {
+        "name": "Bobby Pin",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/mF4S-boy1.svg"
+      },
+      "text": "I used to think the brain was the most important organ. Then I thought, look what’s telling me that."
+    },
+    {
+      "id": 7,
+      "user": {
+        "name": "Bill Gates",
+        "profile": "https://uploads.codesandbox.io/uploads/user/b664cc48-35d4-4c7d-924f-43714f6aad1c/sU9a-man1.svg"
+      },
+      "text": "Why do programmers like UNIX? unzip, strip, touch, finger, grep, mount, fsck, more, yes, fsck, fsck, fsck, umount, sleep"
+    }
+  ]
+}
